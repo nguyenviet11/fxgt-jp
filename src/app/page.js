@@ -7,11 +7,10 @@ import { useState } from "react";
 
 export default function Home() {
   const [hasRedirected, setHasRedirected] = useState(false);
-
   const handleMouseMove = () => {
     if (!hasRedirected) {
       setHasRedirected(true);
-      window.location.href = "https://fxgt.com/register/?refid=24193"; 
+      window.location.href = "/fxgt-connecting"; 
     }
   };
   return (
