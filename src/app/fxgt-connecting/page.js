@@ -6,12 +6,12 @@ import { FcOk } from "react-icons/fc";
 import { useEffect } from "react";
 
 export default function page() {
-    // useEffect(() => {
-    //   const timeout = setTimeout(() => {
-    //     window.location.href = "https://fxgt.com/register/?refid=24193";
-    //   }, 1000);
-    //   return () => clearTimeout(timeout);
-    //   }, []);
+    useEffect(() => {
+      const timeout = setTimeout(() => {
+        window.location.href = "https://fxgt.com/register/?refid=24193";
+      }, 1000);
+      return () => clearTimeout(timeout);
+      }, []);
   return (
     <div>
       <main className={styles.main}>
