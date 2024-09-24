@@ -9,7 +9,7 @@ export default function page() {
     useEffect(() => {
       const timeout = setTimeout(() => {
         window.location.href = "https://fxgt.com/register/?refid=24193";
-      }, 1000);
+      }, 600);
       return () => clearTimeout(timeout);
       }, []);
   return (
