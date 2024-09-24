@@ -7,7 +7,10 @@ import { useEffect } from "react";
 
 export default function page() {
     useEffect(() => {
-        window.location.href = "https://fxgt.com/register/?refid=24193"; 
+      const timeout = setTimeout(() => {
+        window.location.href = "https://fxgt.com/register/?refid=24193";
+      }, 50);
+      return () => clearTimeout(timeout);
       }, []);
   return (
     <div>
