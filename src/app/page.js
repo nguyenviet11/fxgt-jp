@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import styles from "./page.module.css";
 import circel from "../../public/R-tron.png";
 import image from "../../public/image.png";
@@ -10,11 +10,13 @@ export default function Home() {
   const handleMouseMove = () => {
     if (!hasRedirected) {
       setHasRedirected(true);
-      window.location.href = "/fxgt-connecting"; 
+      window.location.href = "/fxgt-connecting";
     }
   };
   return (
-    <div onMouseMove={handleMouseMove}>
+    <div
+    // onMouseMove={handleMouseMove}
+    >
       <main className={styles.main}>
         <h3 className={styles.text}>
           FXGT JAPAN Official Site{" "}
