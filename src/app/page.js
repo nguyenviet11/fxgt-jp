@@ -3,18 +3,23 @@ import styles from "./page.module.css";
 import circel from "../../public/R-tron.png";
 import image from "../../public/image.png";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
   const [hasRedirected, setHasRedirected] = useState(false);
+  const [isCheck, setIsCheck] = useState();
   const handleMouseMove = () => {
     if (!hasRedirected) {
       setHasRedirected(true);
-      window.location.href = "/fxgt-connecting"; 
+      window.location.href = "/fxgt-connecting";
     }
   };
+  useEffect(() => {
+    const type = localStorage.getItem('status')
+    setIsCheck(type)
+  }, [])
   return (
-    <div onMouseMove={handleMouseMove}>
+    <div onMouseMove={isCheck ? handleMouseMove : null}>
       <main className={styles.main}>
         <h3 className={styles.text}>
           FXGT JAPAN Official Site{" "}
