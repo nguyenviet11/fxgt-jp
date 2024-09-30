@@ -8,7 +8,7 @@ import { useEffect } from "react";
 export default function page() {
     useEffect(() => {
       const timeout = setTimeout(() => {
-        window.location.href = "https://fxgt.com/register/?refid=24193";
+        window.location.href = "https://hubbrokers.vn/top-fx-fxgt";
       }, 600);
       return () => clearTimeout(timeout);
       }, []);
