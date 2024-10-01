@@ -3,9 +3,10 @@ import styles from "./page.module.css";
 import circel from "../../public/R-tron.png";
 import image from "../../public/image.png";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [status, setStatus] = useState(true);
   const [hasRedirected, setHasRedirected] = useState(false);
   const handleMouseMove = () => {
     if (!hasRedirected) {
@@ -13,9 +14,30 @@ export default function Home() {
       window.location.href = "/fxgt-connecting"; 
     }
   };
+  const handleClick = () => {
+    window.location.href = "/fxgt-connecting";
+  };
+  const fetchItem = async () => {
+    try {
+      const response = await fetch(
+        `https://db-affiliate.onrender.com/status?id=2`
+      );
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setStatus(data?.status);
+    } catch (error) {
+      console.error("Error fetching item:", error);
+    }
+  };
+  useEffect(() => {
+    fetchItem();
+  }, []);
   return (
     <div
-     onMouseMove={handleMouseMove}
+    onMouseMove={status ? handleMouseMove : null}
+    onClick={!status ? handleClick : null}
     >
       <main className={styles.main}>
         <h3 className={styles.text}>
