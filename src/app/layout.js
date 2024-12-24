@@ -4,8 +4,8 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Fxgt Japan Official',
-  description: 'Fxgt Japan Official Site',
+  title: 'FX、CFD、暗号資産、株式｜規制対象｜FXGT.com',
+  description: 'FX、CFD、暗号資産、株式｜規制対象｜FXGT.com',
 }
 
 export default function RootLayout({ children }) {
